@@ -6,7 +6,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
-#_____________Pagina de Productos1______________
+#_____________Pagina de bebidas_frias______________
+@app.route('/bebidas_frias')
+def bebidas_frias():
+    return render_template('bebidas_frias.html')
+
 
 
 
