@@ -1,7 +1,7 @@
 {% extends 'base/base.html'%}
 
 {%block title%}
-Inicio
+Home
 {%endblock%}
 
 {% block content%}
@@ -9,7 +9,7 @@ Inicio
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{url_for('static', filename='img/carrusel1.jpeg')}}" class="d-block w-100" alt="...">
+          <img src="{{url_for('static', filename='img/carrusel1.jpeg')}}" class="d-block w-100 " alt="...">
         </div>
         <div class="carousel-item">
           <img src="{{url_for('static', filename='img/carrusel2.jpeg')}}" class="d-block w-100" alt="...">
@@ -29,17 +29,17 @@ Inicio
     </div>
     <br>
     <div class="row align-items-center">
-      <div class="col"><img src="{{url_for('static', filename='img/ofertas.jpeg')}}" class="img-fluid" alt="Ofertas"></div>
+      <div class="col"><img src="{{url_for('static', filename='img/ofertas.jpeg')}}" class="img-fluid shadow p-3 mb-5 bg-body rounded" alt="Ofertas"></div>
       <div class="col"><h1>Descripcion</h1></div>
     </div>
     <br>
     <div class="row align-items-center">
       <div class="col"><h1>Descripcion</h1></div>
-      <div class="col"><img src="{{url_for('static', filename='img/entrega.jpeg')}}" class="img-fluid" alt="entrega"></div>
+      <div class="col"><img src="{{url_for('static', filename='img/entrega.jpeg')}}" class="img-fluid shadow p-3 mb-5 bg-body rounded" alt="entrega"></div>
     </div>
     <br>
     <div class="row align-items-center">
-      <div class="col"><img src="{{url_for('static', filename='img/pagos.jpeg')}}" class="img-fluid" alt="pagos"></div>
+      <div class="col"><img src="{{url_for('static', filename='img/pagos.jpeg')}}" class="img-fluid shadow p-3 mb-5 bg-body rounded" alt="pagos"></div>
       <div class="col"><h1>Descripcion</h1></div>
     </div>
   </div>
