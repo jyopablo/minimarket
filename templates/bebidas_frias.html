@@ -8,14 +8,39 @@ Frias
 <br>
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for i in range(0,4)%}
         <div class="col">
             <div class="card">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Te frio</h5>
+                    <h5 class="card-title">{{lista_bebidas_frias[i]}}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div class="text-center">
-                        <a href="#" class="btn btn-success">Añadir</a>
+                        <!-- Button trigger modal  -->
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal{{i}}">
+                            Añadir
+                        </button>
+                        <!-- Modal  -->
+                        <form action="box" method="POST">
+                        <div class="modal fade" id="modal{{i}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="modal{{i}}">{{lista_bebidas_frias[i]}}</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  Se agregara este producto al carrito de compras
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                  <button type="submit" name="Agregar" value="Agregar" id="btnsubmit" class="btn btn-primary">Aceptar</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        </form>
+                        <!-- fin Modal  -->
                     </div>
                   </div>
                   <div class="card-footer text-muted text-center">
@@ -23,112 +48,14 @@ Frias
                   </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Te frio</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-success">Añadir</a>
-                    </div>
-                  </div>
-                  <div class="card-footer text-muted text-center">
-                    Q 34.00
-                  </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Te frio</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-success">Añadir</a>
-                    </div>
-                  </div>
-                  <div class="card-footer text-muted text-center">
-                    Q 34.00
-                  </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Te frio</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-success">Añadir</a>
-                    </div>
-                  </div>
-                  <div class="card-footer text-muted text-center">
-                    Q 34.00
-                  </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Te frio</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-success">Añadir</a>
-                    </div>
-                  </div>
-                  <div class="card-footer text-muted text-center">
-                    Q 34.00
-                  </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Te frio</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-success">Añadir</a>
-                    </div>
-                  </div>
-                  <div class="card-footer text-muted text-center">
-                    Q 34.00
-                  </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Te frio</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-success">Añadir</a>
-                    </div>
-                  </div>
-                  <div class="card-footer text-muted text-center">
-                    Q 34.00
-                  </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Te frio</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-success">Añadir</a>
-                    </div>
-                  </div>
-                  <div class="card-footer text-muted text-center">
-                    Q 34.00
-                  </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 <br>
+{%endblock%}
+
+{%block script%}
+<script>
+
+</script>      
 {%endblock%}

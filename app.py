@@ -1,5 +1,7 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template,request
+
+carrito=[]
 
 app = Flask(__name__)
 #_____________Pagina Index.html_______________
@@ -8,9 +10,9 @@ def index():
     return render_template('index.html')
 #_____________Pagina de bebidas_frias______________
 @app.route('/bebidas_frias')
-def bebidas_frias():
-    return render_template('bebidas_frias.html')
-
+def bebidas_frias(): 
+    frias=['Te frio','Cocacola','Pepsi','Cerveza']
+    return render_template('bebidas_frias.html', lista_bebidas_frias=frias)
 
 
 
