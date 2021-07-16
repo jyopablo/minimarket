@@ -12,7 +12,8 @@ def index():
 @app.route('/bebidas_frias')
 def bebidas_frias(): 
     frias=['Te frio','Cocacola','Pepsi','Cerveza']
-    return render_template('bebidas_frias.html', lista_bebidas_frias=frias)
+    precios=['34.50','15.01','20.40','30.10']
+    return render_template('bebidas_frias.html', lista_bebidas_frias=frias,lista_precios=precios)
 
 
 

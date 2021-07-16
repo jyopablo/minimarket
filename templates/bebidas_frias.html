@@ -1,9 +1,14 @@
 {% extends 'base/base.html'%}
 
+{% block css%}
+<link rel="stylesheet" href="{{url_for('static',filename='css/style_bebidas_frias.css')}}">
+{% endblock %}
+
 {%block title%}
 Frias
 {%endblock%}
 
+  
 {%block content%}
 <br>
 <div class="container">
@@ -26,7 +31,10 @@ Frias
                             <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="modal{{i}}">{{lista_bebidas_frias[i]}}</h5>
+                                  <h5>
+                                    <input class="modal-title" id="" type="text" value="{{lista_bebidas_frias[i]}}" readonly>
+                                    <input class="modal-title" id="" type="text" value=" Q {{lista_precios[i]}}" readonly>  
+                                  </h5>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -44,7 +52,7 @@ Frias
                     </div>
                   </div>
                   <div class="card-footer text-muted text-center">
-                    Q 34.00
+                    Q {{lista_precios[i]}}
                   </div>
             </div>
         </div>
