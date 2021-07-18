@@ -26,14 +26,15 @@ Frias
                             Añadir
                         </button>
                         <!-- Modal  -->
-                        <form action="box" method="POST">
                         <div class="modal fade" id="modal{{i}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
+                                
+                                <form method="POST">
                                 <div class="modal-header">
                                   <h5>
-                                    <input class="modal-title" id="" type="text" value="{{lista_bebidas_frias[i]}}" readonly>
-                                    <input class="modal-title" id="" type="text" value=" Q {{lista_precios[i]}}" readonly>  
+                                    <input class="modal-title" id="producto{{i}}" name="producto{{i}}" type="text" value="{{lista_bebidas_frias[i]}}" readonly>
+                                    <input class="modal-title" id="precio{{i}}" name="precio{{i}}" type="text" value=" Q {{lista_precios[i]}}" readonly>  
                                   </h5>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
@@ -42,12 +43,13 @@ Frias
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                  <button type="submit" name="Agregar" value="Agregar" id="btnsubmit" class="btn btn-primary">Aceptar</button>
+                                  <input type="submit" name="Agregar" value="Agregar" id="btnSubmit" class="btn btn-primary">
                                 </div>
+                                </form>
+                                
                               </div>
                             </div>
                         </div>
-                        </form>
                         <!-- fin Modal  -->
                     </div>
                   </div>
