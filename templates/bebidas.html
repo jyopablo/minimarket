@@ -1,0 +1,78 @@
+{% extends 'base/base.html'%}
+
+{% block css%}
+<link rel="stylesheet" href="{{url_for('static',filename='css/style_bebidas.css')}}">
+{% endblock %}
+
+{%block title%}
+Frias
+{%endblock%}
+
+  
+{%block content%}
+<br>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for i in range(0,11)%}
+        <div class="col">
+            <div class="card">
+                <img src="./static/img/{{lista_imgs[i]}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{lista_bebidas[i]}}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="text-center">
+                        <!-- Button trigger modal  -->
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal{{i}}">
+                            Añadir
+                        </button>
+                        <!-- Modal  -->
+                        <div class="modal fade" id="modal{{i}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <!--Alerta de Producto exitente-->
+                                {% if se_agrego_antes == True %}
+                                <div class="alert alert-primary" role="alert">
+                                  A simple primary alert—check it out!
+                                </div>
+                                {% endif %}
+                                <!--Fin de Alerta-->
+                                <!--Formulario de productos y precios-->
+                                <form method="POST">
+                                <div class="modal-header">
+                                  <h5>
+                                    <input class="modal-title" id="producto{{i}}" name="producto{{i}}" type="text" value="{{lista_bebidas[i]}}" readonly>
+                                    <input class="modal-title" id="precio{{i}}" name="precio{{i}}" type="text" value=" Q {{lista_precios[i]}}" readonly>  
+                                  </h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  Se agregara este producto al carrito de compras
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                  <input type="submit" name="Agregar" value="Agregar" id="btnSubmit" class="btn btn-primary">
+                                </div>
+                                </form>
+                                <!--Fin Formulario de productos y precios-->
+                              </div>
+                            </div>
+                        </div>
+                        <!-- fin Modal  -->
+                    </div>
+                  </div>
+                  <div class="card-footer text-muted text-center">
+                    Q {{lista_precios[i]}}
+                  </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+{%endblock%}
+
+{%block script%}
+<script>
+
+</script>      
+{%endblock%}
