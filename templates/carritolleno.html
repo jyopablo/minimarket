@@ -3,6 +3,9 @@
 {% block title %}
 carrito
 {% endblock%}
+{% block css%}
+<link rel="stylesheet" href="{{url_for('static',filename='css/style_modal.css')}}">
+{% endblock %}
 
 
 {% block content%}
@@ -13,14 +16,15 @@ carrito
             <th scope="col">Producto</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
             {% for i in range (0,tamaño)%}
             <tr>
-                <form action="#"></form>
-                <td>{{carrito[i]}}</td>
-                <td>{{precio_carrito[i]}}</td>
+                <form method="POST">
+                <td><input class="modal-title" id="producto{{i}}" name="producto{{i}}" type="text" value="{{carrito[i]}}" readonly></td>
+                <td><input class="modal-title" id="precio{{i}}" name="precio{{i}}" type="text" value="{{precio_carrito[i]}}" readonly></td>
                 <td>   
                         <select name="cars" id="cars">
                           <option value="volvo">1</option>
@@ -36,11 +40,12 @@ carrito
                         </select>
                 </td>
                 <td>
-                    <input type="button" value="Eliminar">
+                    <input type="submit" name="Eliminar" value="Eliminar" id="btnSubmit" class="btn btn-danger">
                 </td>
+                </form>
             </tr>
             {% endfor %}
-                </form>
+                
         </tbody>
       </table>
       {% for i in range(0,11) %}

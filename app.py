@@ -19,12 +19,32 @@ def carritovacio():
     global validar
     return render_template('carritovacio.html',validar=validar)
 
-#_____________Pagina de carrito Vacio _______________
-@app.route('/carritolleno')
+#_____________Pagina de carrito lleno _______________
+@app.route('/carritolleno',methods=['GET','POST'])
 def carritolleno():
     global validar
     tamaño=len(carrito)
-    return render_template('carritolleno.html',validar=validar, tamaño=tamaño,carrito=carrito,precio_carrito=precio_carrito)    
+    try:
+        if request.method=='POST':
+            for i in range(0,tamaño):
+                producto_seleccionado=request.form.get("producto"+str(i))
+                precio_producto=request.form.get("precio"+str(i))
+                if producto_seleccionado != None and precio_producto != None:
+                    carrito.pop(i)
+                    precio_carrito.pop(i)
+                    comprobar=len(carrito)
+                    tamaño=tamaño-1
+                    if comprobar==0:
+                        validar=False
+                        return render_template('index.html')
+                    break
+            return render_template('carritolleno')    
+            #return render_template('carritolleno.html',validar=validar, tamaño=tamaño,carrito=carrito,precio_carrito=precio_carrito)                 
+        else:
+            return render_template('carritolleno.html')
+            #return render_template('carritolleno.html',validar=validar, tamaño=tamaño,carrito=carrito,precio_carrito=precio_carrito)            
+    except:
+       return render_template('carritolleno.html',validar=validar, tamaño=tamaño,carrito=carrito,precio_carrito=precio_carrito)    
 
 #_____________Pagina de bebidas_bebidas______________
 @app.route('/bebidas', methods=['GET','POST'])
