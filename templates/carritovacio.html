@@ -1,0 +1,21 @@
+{% extends 'base/base.html'%}
+
+{% block title %}
+carrito
+{% endblock%}
+
+{% block content%}
+{% for i in range(0,11) %}
+<br>
+{% endfor %}
+<div class="container">
+    <div class="card w-100">
+        <div class="card-body">
+          <p class="card-text"><h1>No exiten Productos en el Carrito.</h1></p>
+        </div>
+    </div>
+</div>
+{% for i in range(0,11) %}
+<br>
+{% endfor %}
+{% endblock %}

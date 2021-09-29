@@ -13,12 +13,12 @@ Frias
 <br>
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-      {% for i in range(0,11)%}
+      {% for i in range(0,2)%}
         <div class="col">
             <div class="card">
                 <img src="./static/img/{{lista_imgs[i]}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{lista_bebidas[i]}}</h5>
+                    <h5 class="card-title">{{lista_otros[i]}}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div class="text-center">
                         <!-- Button trigger modal  -->
@@ -40,7 +40,7 @@ Frias
                                 <form method="POST">
                                 <div class="modal-header">
                                   <h5>
-                                    <input class="modal-title" id="producto{{i}}" name="producto{{i}}" type="text" value="{{lista_bebidas[i]}}" readonly>
+                                    <input class="modal-title" id="producto{{i}}" name="producto{{i}}" type="text" value="{{lista_otros[i]}}" readonly>
                                     <input class="modal-title" id="precio{{i}}" name="precio{{i}}" type="text" value=" Q {{lista_precios[i]}}" readonly>  
                                   </h5>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

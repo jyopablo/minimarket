@@ -1,0 +1,52 @@
+{% extends 'base/base.html'%}
+
+{% block title %}
+carrito
+{% endblock%}
+
+
+{% block content%}
+<div class="container-sm">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in range (0,tamaño)%}
+            <tr>
+                <form action="#"></form>
+                <td>{{carrito[i]}}</td>
+                <td>{{precio_carrito[i]}}</td>
+                <td>   
+                        <select name="cars" id="cars">
+                          <option value="volvo">1</option>
+                          <option value="saab">2</option>
+                          <option value="opel">3</option>
+                          <option value="audi">4</option>
+                          <option value="opel">5</option>
+                          <option value="audi">6</option>
+                          <option value="opel">7</option>
+                          <option value="audi">8</option>
+                          <option value="opel">9</option>
+                          <option value="audi">10</option>
+                        </select>
+                </td>
+                <td>
+                    <input type="button" value="Eliminar">
+                </td>
+            </tr>
+            {% endfor %}
+                </form>
+        </tbody>
+      </table>
+      {% for i in range(0,11) %}
+        <br>
+      {% endfor %}
+</div>
+
+
+{% endblock %}
