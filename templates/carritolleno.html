@@ -51,7 +51,40 @@ carrito
       {% for i in range(0,11) %}
         <br>
       {% endfor %}
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modal1">Button</button>
+         <!-- Modal  -->
+         <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <!--Formulario de productos y precios-->
+              <form method="POST">
+              <div class="modal-header">
+                <h5>
+                    Se enviara un correo de aceptacion
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+                <input type="submit" name="Aceptar" value="Aceptar" id="btnSubmit" class="btn btn-primary">
+              </div>
+              </form>
+              <!--Fin Formulario de productos y precios-->
+            </div>
+          </div>
+      </div>
+      <!-- fin Modal  -->
+      </div>
 </div>
-
+{% for i in range(0,3) %}
+        <br>
+{% endfor %}
 
 {% endblock %}

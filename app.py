@@ -37,7 +37,14 @@ def carritolleno():
                     if comprobar==0:
                         validar=False
                         return render_template('index.html')
-                    break
+                    break                  
+            email=request.form.get("email")
+            print(email) 
+            if email!=None:
+                validar=False
+                carrito.clear()
+                precio_carrito.clear()
+                return render_template('index.html')
             return render_template('carritolleno')    
             #return render_template('carritolleno.html',validar=validar, tamaño=tamaño,carrito=carrito,precio_carrito=precio_carrito)                 
         else:
